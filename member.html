@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="styles.css" />
+    <title>CHURCH MANAGEMENT SYSTEM</title>
+  </head>
+  <body>
+    <div class="header">
+      <nav class="navbar nav1 navbar-dark justify-content-between">
+        <a class="navbar-brand">Logo</a>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link link" style="color: rgb(247, 240, 47)">
+              <span>Group : </span>
+              <span id="category"></span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link" style="color: white">
+              <span><i class="fas fa-user" style="font-size: 20px"></i></span>
+              <span id="username"></span
+            ></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link active" href="login.html" id="logout"
+              >Sign Out</a
+            >
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <section style="margin-top: 3rem">
+      <div class="main-content">
+        <div class="left">
+          <ul class="nav flex-column">
+            <li class="nav-item">
+              <a class="nav-link side-link active" href="member.html"
+                >Members</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link side-link" href="events.html">Events</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link side-link" href="addevent.html"
+                >Add More Events</a
+              >
+            </li>
+          </ul>
+        </div>
+        <div class="right">
+          <h4 class="mb-4">Members</h4>
+          <table class="table table-bordered table-hover">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Fullname</th>
+                <th scope="col">Email</th>
+                <th scope="col">Group leadership</th>
+                <th scope="col">Action</th>
+              </tr>
+            </thead>
+            <tbody id="users"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/init.js"></script>
+  <script src="js/readusers.js"></script>
+</html>

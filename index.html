@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>CHURCH MANAGEMENT SYSTEM</title>
+  </head>
+  <body>
+    <div class="header">
+      <nav class="navbar nav1 navbar-dark justify-content-between">
+        <a class="navbar-brand">Logo</a>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link link active" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link" href="login.html">Sign In</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <div
+      style="
+        height: 400px;
+        background: url(https://churchsuite.com/img/http/assets/grunge.png/baee1111d5136d7067be145a02e96836.jpg)
+          no-repeat 50%;
+        background-size: cover;
+        background-blend-mode: color-burn;
+        background-color: #455189;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <div class="banner-content">
+        <h2>Church Management Systems</h2>
+
+        <p>Join and be a member for Our church</p>
+        <button class="btn btn-light">
+          <a href="registration.html">Join Us</a>
+        </button>
+      </div>
+    </div>
+    <section class="main container">
+      <h3>Events</h3>
+
+      <div class="row Events"></div>
+    </section>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+  <script src="js/firebase.js"></script>
+  <script src="js/frontevents.js"></script>
+</html>

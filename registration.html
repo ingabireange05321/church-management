@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <title>CHURCH MANAGEMENT SYSTEM</title>
+  </head>
+  <body>
+    <div class="header">
+      <nav class="navbar nav1 navbar-dark justify-content-between">
+        <a class="navbar-brand">Logo</a>
+        <ul class="nav">
+          <li class="nav-item">
+            <a class="nav-link link" href="index.html">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link" href="about.html">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link link active" href="registration.html">Sign Up</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+    <section class="main">
+      <div class="form">
+        <form id="registerForm">
+          <h3 class="mt-2 mb-3 text-center">Sign Up</h3>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Your Full Name </label>
+            <input
+              type="text"
+              class="form-control"
+              id="fullname"
+              name="fullname"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Your Email </label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              aria-describedby="emailHelp"
+              placeholder="Enter email"
+            />
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Your Group </label>
+            <select class="form-control" id="category">
+              <option value="1">member</option>
+              <option value="2">worshipTeam</option>
+              <option value="3">sundaySchool</option>
+              <option value="4">pastorLeadership</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="exampleInputPassword1">Your Password</label>
+            <input
+              type="password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="Password"
+            />
+          </div>
+
+          <button type="submit" class="btn btn-danger">Sign Up</button>
+          <small id="emailHelp" class="form-text text-muted"
+            >You have account <a href="login.html"> Sign In</a>.</small
+          >
+        </form>
+      </div>
+    </section>
+  </body>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script>
+  <script src="js/firebase.js"></script>
+  <script>
+    const form = document.querySelector("#registerForm");
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+
+      const fullname = form["fullname"].value;
+      const email = form["email"].value;
+      const password = form["password"].value;
+      let inputcategory = document.getElementById("category");
+      const category = inputcategory.options[inputcategory.selectedIndex].text;
+
+      auth
+        .createUserWithEmailAndPassword(email, password)
+        .catch(function (error) {
+          let errorCode = error.code;
+          let errorMessage = error.message;
+
+          alert(errorCode + " - " + errorMessage);
+        })
+        .then((cred) => {
+          const uid = cred.user.uid;
+          db.collection("Users")
+            .doc(uid)
+            .set({
+              uid,
+              fullname,
+              email,
+              password,
+              category,
+            })
+            .then((result) => {
+              form.reset();
+              alert("Successfull registered");
+              window.location.href = "login.html";
+            });
+        });
+    });
+  </script>
+</html>
