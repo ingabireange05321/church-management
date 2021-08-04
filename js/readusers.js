@@ -62,9 +62,6 @@ if (catUser === "admin") {
     <td>${user.fullname}</td>
     <td>${user.email}</td>
     <td>${user.category}</td>
-    <td class="text-center">
-      <a href="#" onclick="deleteUser('${uid}')"><i class="fas fa-trash-alt text-danger"></i></a>
-    </td>
   </tr>
         
         `;

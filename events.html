@@ -56,7 +56,7 @@
             <li class="nav-item">
               <a class="nav-link side-link active" href="events.html">Events</a>
             </li>
-            <li class="nav-item">
+            <li class="nav-item" id="addevent">
               <a class="nav-link side-link" href="addevent.html"
                 >Add More Events</a
               >
@@ -78,4 +78,13 @@
   <script src="js/firebase.js"></script>
   <script src="js/init.js"></script>
   <script src="js/readevents.js"></script>
+  <script>
+    if (sessionStorage.getItem("category") !== "admin") {
+      document.getElementById("addevent").style.display = "none";
+    }
+    document.getElementById("username").innerHTML =
+      sessionStorage.getItem("fullname");
+    document.getElementById("category").innerHTML =
+      sessionStorage.getItem("category");
+  </script>
 </html>

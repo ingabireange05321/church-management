@@ -40,3 +40,8 @@ if (
   document.getElementById("category").innerHTML =
     sessionStorage.getItem("category");
 }
+
+if (sessionStorage.getItem("category") !== "admin") {
+  document.getElementById("action").style.display = "none";
+  document.getElementById("addevent").style.display = "none";
+}

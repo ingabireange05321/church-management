@@ -62,9 +62,7 @@ if (cat === "admin") {
                   >${new Date(event.date).toDateString()}</small
                 >
                 </div>
-                <div class="card-footer text-muted">
-              <button class="btn btn-danger" onclick="deletePost('${postId}')" > <i class="fa fa-trash"></i> <span>delete</span></button> 
-            </div>
+               
               </div>
               
             </div>
