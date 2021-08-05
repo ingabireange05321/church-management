@@ -1,10 +1,10 @@
 var firebaseConfig = {
-  apiKey: "AIzaSyBJKJUudUTohQdboP1FaWflUXmf9JZgszE",
-  authDomain: "church-management-sys.firebaseapp.com",
-  projectId: "church-management-sys",
-  storageBucket: "church-management-sys.appspot.com",
-  messagingSenderId: "202778104037",
-  appId: "1:202778104037:web:763763460db0ed8529440c",
+  apiKey: "AIzaSyAa7eDjQPpJrpfz1QjMcK_LgVoBSxPQA2o",
+  authDomain: "church-management-bd75d.firebaseapp.com",
+  projectId: "church-management-bd75d",
+  storageBucket: "church-management-bd75d.appspot.com",
+  messagingSenderId: "927960629616",
+  appId: "1:927960629616:web:c47fc6674a3282a3720fb5"
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
